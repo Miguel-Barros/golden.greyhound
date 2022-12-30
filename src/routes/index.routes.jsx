@@ -6,8 +6,10 @@ import ComoFunciona from "../pages/como_funciona";
 import Assinar from "../pages/assinar";
 import Navbar from "../components/navbar/";
 import Support from "../components/whatsapp";
+import Suporte from "../pages/suporte";
 
 export default function ApplicationRoutes() {
+
   return (
     <Router>
       <div className="h-screen w-screen overflow-hidden bg-gradient-to-b to-background-dark from-background-primary">
@@ -16,13 +18,14 @@ export default function ApplicationRoutes() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Inicio />} />
+            <Route path="/suporte" element={<Suporte />} />
             <Route path="/inicio" element={<Inicio />} />
             <Route path="/planos" element={<Planos />} />
             <Route path="/como_funciona" element={<ComoFunciona />} />
             <Route path="/assinar" element={<Assinar />} />
             <Route path="*" element={<h1>Not Found</h1>} />
           </Routes>
-          <p className="w-screen bottom-5 absolute text-center text-typography-primary opacity-30">
+          <p className="md:absolute md:block sm:hidden sm:none w-screen bottom-5 absolute text-center text-typography-primary opacity-30">
             Golden GreyHound © 2022 - Termos - Privacidade
           </p>
         </div>

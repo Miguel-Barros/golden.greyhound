@@ -1,12 +1,16 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/button";
+import Modal_free from "./modal_free";
+import { useState } from "react";
 
-function Inicio() {
+function Inicio({currentPath}) {
   const navigate = useNavigate();
+  const [modal, setModal] = useState(false);
 
   return (
-    <div className="flex justify-center items-center flex-col h-screen w-screen text-typography-primary gap-5 ">
+    <div className="flex justify-center items-center text-center flex-col h-screen w-screen text-typography-primary gap-5 ">
+      <Modal_free modal={modal} setModal={setModal} closeModal={() => setModal(false)}/>
       <h1 className="text-typography-primary font-bold text-4xl ">Bem vindo</h1>
       <h2 className="text-typography-primary font-bold text-2xl ">
         Somos a
@@ -17,12 +21,12 @@ function Inicio() {
         <h3>+ 4 anos no mercado de galgos</h3>
         <h3>+ 35k de seguidores</h3>
       </span>
-      <span className="flex justify-between gap-5">
+      <span className={`flex justify-between gap-5 ${modal && "opacity-0"}`}>
         <Button
           type="secondary"
           danger
           label="Grupo Free"
-          action={() => alert("QRCODE")}
+          action={() => setModal(true)}
         />
         <Button
           type="primary"

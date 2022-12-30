@@ -1,7 +1,10 @@
 import React from "react";
 import Button from "../../components/button";
+import { useNavigate } from "react-router-dom";
 
 function Planos() {
+  const navigate = useNavigate();
+  
   return (
     <div className="flex w-screen h-screen justify-center items-center">
       <span className="sm:flex-col md:flex-row flex w-[900px]  md:h-[350px] gap-10 p-10 text-typography-primary">
@@ -10,7 +13,7 @@ function Planos() {
             Grupo Free
           </span>
           <p>Entradas Limitadas Diariamente</p>
-          <Button label="Entrar" className="w-1/2 mt-[25%] rounded-xl" />
+          <Button label="Entrar" className="w-1/2 mt-[25%] rounded-xl" action={() => window.open('https://t.me/goldengreyhoundfreee')}/>
         </div>
         <p className="self-center font-bold text-4xl">X</p>
         <div className="flex flex-col gap-2  w-full rounded-lg justify-center items-center bg-background-secondary p-2">
@@ -21,7 +24,7 @@ function Planos() {
           <p>Suporte 24h</p>
           <p>Entradas Ilimitadas</p>
           <p>Consultoria Especializada</p>
-          <Button label="Entrar" className="w-1/2 rounded-xl" />
+          <Button label="Entrar" className="w-1/2 rounded-xl" action={() => navigate('/assinar') } />
         </div>
       </span>
     </div>
