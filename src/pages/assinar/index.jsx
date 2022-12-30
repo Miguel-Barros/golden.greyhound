@@ -12,7 +12,7 @@ function Assinar() {
 
   return (
     <div className="flex justify-center items-center flex-col h-screen w-screen text-typography-primary gap-5 px-4">
-      <h1 className="text-[20px] font-bold ">Estamos quase lá, preencha os campos, e efetue o pagamento para concluir sua adesão ao grupo</h1>
+      <h1 className="sm:text-sm md:text-xl font-bold ">Estamos quase lá, preencha os campos, e efetue o pagamento para concluir sua adesão ao grupo</h1>
       <div className="bg-background-secondary flex flex-col rounded-lg p-4 max-w-lg gap-4">
         <h2 className="text-[14px]">preencha os campos abaixo para que possamos lhe enviar o link do grupo</h2>
         <form className="gap-4 flex flex-col">
